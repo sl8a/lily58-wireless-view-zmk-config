@@ -68,6 +68,14 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
     };
 };
 
+&left_encoder {
+    status = "okay";
+};
+
+&right_encoder {
+    status = "okay";
+};
+
 &pro_micro_i2c {
     status = "okay";
 
