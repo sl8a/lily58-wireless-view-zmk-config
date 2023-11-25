@@ -11,7 +11,31 @@
 #include <dt-bindings/zmk/rgb.h>
 
 &led_strip {
-    chain-length = <6>;
+    chain-length = <12>;
+};
+
+//Encoder Support
+//Alps Alpine EC11N1524402: 30 Detent, 15PPR, 2 Channel, Quadrature, 15000 Cycle
+/ {
+    left_encoder: encoder_left {
+        compatible = "alps,ec11";
+        label = "LEFT_ENCODER";
+        a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <60>;
+    };
+    right_encoder: encoder_right {
+        compatible = "alps,ec11";
+        label = "RIGHT_ENCODER";
+        a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <60>;
+    };
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder &right_encoder>;
+        triggers-per-rotation = <30>;
+    };
 };
 
 / 
