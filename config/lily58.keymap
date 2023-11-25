@@ -37,7 +37,8 @@
         triggers-per-rotation = <30>;
     };
 };
-
+/ {
+    behaviors {
 // Encoder
         rgb_encoder: rgb_encoder {
             compatible = "zmk,behavior-sensor-rotate";
@@ -52,8 +53,6 @@
             bindings = <&tab_left>, <&tab_right>;
         };
 
-/ 
-{
     keymap {
         compatible = "zmk,keymap";
 
