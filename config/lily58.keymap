@@ -37,22 +37,8 @@
         triggers-per-rotation = <30>;
     };
 };
-/ {
-    behaviors {
-// Encoder
-        rgb_encoder: rgb_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "RGB_ENCODER";
-            #sensor-binding-cells = <0>;
-            bindings = <&rgb_inc>, <&rgb_dec>;
-        };
-        tab_browser: tab_browser {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "TAB_BROWSER";
-            #sensor-binding-cells = <0>;
-            bindings = <&tab_left>, <&tab_right>;
-        };
 
+/ {
     keymap {
         compatible = "zmk,keymap";
 
@@ -73,7 +59,7 @@
                            &kp LALT  &kp LGUI  &mo 1   &kp SPACE          &kp RET          &mo 2   &kp BSPC  &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &tab_browser>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         lower_layer {
@@ -113,7 +99,7 @@
                              &trans        &trans     &trans   &trans    &trans  &trans       &trans     &trans
             >;
 
-            sensor-bindings = <&rgb_encoder &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
