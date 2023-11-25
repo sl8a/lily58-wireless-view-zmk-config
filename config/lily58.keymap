@@ -16,6 +16,7 @@
 
 //Encoder Support
 //Alps Alpine EC11N1524402: 30 Detent, 15PPR, 2 Channel, Quadrature, 15000 Cycle
+
 / {
     left_encoder: encoder_left {
         compatible = "alps,ec11";
@@ -24,6 +25,7 @@
         b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <60>;
     };
+
     right_encoder: encoder_right {
         compatible = "alps,ec11";
         label = "RIGHT_ENCODER";
@@ -31,6 +33,7 @@
         b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <60>;
     };
+
     sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
@@ -92,11 +95,11 @@
 
             label = "Raise";
             bindings = <
-&trans     &trans  &trans    &trans        &trans     &trans                     &trans       &trans     &trans     &trans    &trans     &trans
-&kp GRAVE  &kp N1  &kp N2    &kp UP_ARROW  &kp N4     &kp N5                     &kp N6       &kp N7     &kp N8     &kp N9    &kp N0     &trans
-&kp F1     &kp F2  &kp LEFT  &kp DOWN      &kp RIGHT  &kp F6                     &trans       &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT  &trans
-&kp F7     &kp F8  &kp F9    &kp F10       &kp F11    &kp F12  &trans    &trans  &kp KP_PLUS  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT   &kp BSLH
-                             &trans        &trans     &trans   &trans    &trans  &trans       &trans     &trans
+&trans           &trans           &trans           &trans           &trans           &trans                             &trans           &trans           &trans     &trans    &trans     &trans
+&kp GRAVE        &kp N1           &kp N2           &kp UP_ARROW     &kp N4           &kp N5                             &kp N6           &kp N7           &kp N8     &kp N9    &kp N0     &trans
+&kp F1           &kp F2           &kp LEFT         &kp DOWN         &kp RIGHT        &kp F6                             &trans           &kp LEFT         &kp DOWN   &kp UP    &kp RIGHT  &trans
+&rgb_ug RGB_BRD  &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &trans    &trans  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &kp EQUAL  &kp LBKT  &kp RBKT   &kp BSLH
+                                                   &trans           &trans           &trans           &trans    &trans  &trans           &trans           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
