@@ -86,7 +86,7 @@
                                         &trans        &trans        &trans        &trans    &trans  &trans             &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp BT_NXT BT_PRV>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         raise_layer {
@@ -106,8 +106,8 @@
                                                    &trans           &trans           &trans           &trans    &trans  &trans           &trans           &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp RGB_EFF RGB_EFR>;
-};
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            };
     };
 };
 
