@@ -6,8 +6,8 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
 &nice_view_spi {
@@ -81,13 +81,6 @@
             #binding-cells = <0>;
             bindings = <&kp LESS_THAN>, <&kp BACKSLASH>, <&kp GREATER_THAN>;
         };
-
-        SPACERETURN: SPACERETURN {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SPACERETURN";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&kp RET>;
-        };
     };
 
     keymap {
@@ -123,11 +116,11 @@
 
             label = "Lower";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &ext_power EP_TOG  &trans                &trans                 &trans  &trans  &trans
-&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                          &none              &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none   &none   &none
-&kp GRAVE   &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT                       &none              &kp LEFT_BRACE        &kp RIGHT_BRACE        &none   &none   &none
-&trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans             &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none   &none   &none
-                                        &trans        &trans        &trans        &trans    &trans  &trans             &trans                &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &out OUT_TOG  &trans                &trans                 &trans  &trans  &trans
+&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                          &none         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none   &none   &none
+&kp GRAVE   &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT                       &none         &kp LEFT_BRACE        &kp RIGHT_BRACE        &none   &none   &none
+&trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none   &none   &none
+                                        &trans        &trans        &trans        &trans    &trans  &trans        &trans                &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &BT_SELECT>;
