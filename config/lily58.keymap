@@ -46,6 +46,15 @@
 };
 
 / {
+    behaviors {
+        BT_SELECT: BT_SELECT {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "BT_SELECT";
+            #sensor-binding-cells = <0>;
+            bindings = <&bt BT_NXT>, <&bt BT_PRV>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -66,7 +75,7 @@
                            &kp LALT  &kp LGUI  &mo 1   &kp SPACE          &kp RET          &mo 2   &kp BSPC  &kp RGUI
             >;
 
-           sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
         };
 
         lower_layer {
@@ -86,7 +95,7 @@
                                         &trans        &trans        &trans        &trans    &trans  &trans             &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&BT_SELECT>;
         };
 
         raise_layer {
@@ -107,7 +116,7 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-            };
+        };
     };
 };
 
