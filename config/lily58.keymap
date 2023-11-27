@@ -68,25 +68,11 @@
             bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
         };
 
-        CAP_LOCK: CAP_LOCK {
-            compatible = "zmk,behavior-tap-dance";
-            label = "CAP_LOCK";
-            #binding-cells = <0>;
-            bindings = <&kp CAPS>, <&kp LEFT_SHIFT>;
-        };
-
         bslashg: bslashg {
             compatible = "zmk,behavior-tap-dance";
             label = "BSLASHG";
             #binding-cells = <0>;
             bindings = <&kp LESS_THAN>, <&kp BACKSLASH>, <&kp GREATER_THAN>;
-        };
-
-        SPACERETURN: SPACERETURN {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SPACERETURN";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&kp RET>;
         };
     };
 
@@ -103,11 +89,11 @@
 
             label = "Base";
             bindings = <
-&kp ESC    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                                      &kp NUMBER_6  &kp N7    &kp N8     &kp N9   &kp N0    &kp EQUAL
-&kp TAB    &kp Q         &kp W         &kp E         &kp R         &kp T                                       &kp Y         &kp U     &kp I      &kp O    &kp P     &kp MINUS
-&kp LCTRL  &kp A         &kp S         &kp D         &kp F         &kp G                                       &kp H         &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&CAP_LOCK  &kp Z         &kp X         &kp C         &kp V         &kp B   &rgb_ug RGB_TOG    &rgb_ug RGB_EFF  &kp N         &kp M     &kp COMMA  &kp DOT  &kp FSLH  &bslashg
-                                       &kp LALT      &kp LGUI      &mo 1   &SPACERETURN       &SPACERETURN     &mo 2         &kp BSPC  &kp CLCK
+&kp ESC         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                         &kp NUMBER_6  &kp N7    &kp N8     &kp N9   &kp N0    &kp EQUAL
+&kp TAB         &kp Q         &kp W         &kp E         &kp R         &kp T                          &kp Y         &kp U     &kp I      &kp O    &kp P     &kp MINUS
+&kp LCTRL       &kp A         &kp S         &kp D         &kp F         &kp G                          &kp H         &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C         &kp V         &kp B   &kp CLCK     &kp CLCK  &kp N         &kp M     &kp COMMA  &kp DOT  &kp FSLH  &bslashg
+                                            &kp LALT      &kp LGUI      &mo 1   &kp SPACE    &kp RET   &mo 2         &kp BSPC  &kp CLCK
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
@@ -143,14 +129,24 @@
 
             label = "Raise";
             bindings = <
-&trans           &trans           &trans           &trans           &trans           &trans                             &trans           &trans           &trans     &trans    &trans     &trans
-&kp GRAVE        &kp N1           &kp N2           &kp UP_ARROW     &kp N4           &kp N5                             &kp N6           &kp N7           &kp N8     &kp N9    &kp N0     &trans
-&kp F1           &kp F2           &kp LEFT         &kp DOWN         &kp RIGHT        &kp F6                             &trans           &kp LEFT         &kp DOWN   &kp UP    &kp RIGHT  &trans
-&rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &trans    &trans  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &kp EQUAL  &kp LBKT  &kp RBKT   &kp BSLH
-                                                   &trans           &trans           &trans           &trans    &trans  &trans           &trans           &trans
+&trans           &trans           &trans           &trans           &trans           &trans                                                                 &trans           &trans           &trans     &trans    &trans     &trans
+&kp GRAVE        &kp N1           &kp N2           &kp UP_ARROW     &kp N4           &kp N5                                                                 &kp N6           &kp N7           &kp N8     &kp N9    &kp N0     &trans
+&kp F1           &kp F2           &kp LEFT         &kp DOWN         &kp RIGHT        &kp F6                                                                 &trans           &kp LEFT         &kp DOWN   &kp UP    &kp RIGHT  &trans
+&rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_TOG    &rgb_ug RGB_COLOR_HSB(233,100,50)  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &kp EQUAL  &kp LBKT  &kp RBKT   &kp BSLH
+                                                   &trans           &trans           &trans           &trans             &trans                             &trans           &trans           &trans
             >;
 
             sensor-bindings = <&RGB_EFFECT_SELECT &RGB_BRIGHT>;
+        };
+
+        layer_3 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
         };
     };
 };
