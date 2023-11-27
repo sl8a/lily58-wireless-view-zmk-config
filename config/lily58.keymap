@@ -81,6 +81,13 @@
             #binding-cells = <0>;
             bindings = <&kp LESS_THAN>, <&kp BACKSLASH>, <&kp GREATER_THAN>;
         };
+
+        SPACERETURN: SPACERETURN {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SPACERETURN";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp RET>;
+        };
     };
 
     keymap {
