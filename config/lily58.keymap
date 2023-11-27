@@ -53,6 +53,20 @@
             #sensor-binding-cells = <0>;
             bindings = <&bt BT_NXT>, <&bt BT_PRV>;
         };
+
+        RGB_EFFECT_SELECT: RGB_EFFECT_SELECT {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "RGB_EFFECT_SELECT";
+            #sensor-binding-cells = <0>;
+            bindings = <&rgb_ug RGB_EFF>, <&rgb_ug RGB_EFR>;
+        };
+
+        RGB_BRIGHT: RGB_BRIGHT {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "RGB_BRIGHT";
+            #sensor-binding-cells = <0>;
+            bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+        };
     };
 
     keymap {
