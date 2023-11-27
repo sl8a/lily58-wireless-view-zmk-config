@@ -81,6 +81,13 @@
             #binding-cells = <0>;
             bindings = <&kp LESS_THAN>, <&kp BACKSLASH>, <&kp GREATER_THAN>;
         };
+
+        SPACERETURN: SPACERETURN {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SPACERETURN";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp RET>;
+        };
     };
 
     keymap {
@@ -100,7 +107,7 @@
 &kp TAB    &kp Q         &kp W         &kp E         &kp R         &kp T                                       &kp Y         &kp U     &kp I      &kp O    &kp P     &kp MINUS
 &kp LCTRL  &kp A         &kp S         &kp D         &kp F         &kp G                                       &kp H         &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
 &CAP_LOCK  &kp Z         &kp X         &kp C         &kp V         &kp B   &rgb_ug RGB_TOG    &rgb_ug RGB_EFF  &kp N         &kp M     &kp COMMA  &kp DOT  &kp FSLH  &bslashg
-                                       &kp LALT      &kp LGUI      &mo 1   &kp SPACE          &kp RET          &mo 2         &kp BSPC  &kp CLCK
+                                       &kp LALT      &kp LGUI      &mo 1   &SPACERETURN       &SPACERETURN     &mo 2         &kp BSPC  &kp CLCK
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
