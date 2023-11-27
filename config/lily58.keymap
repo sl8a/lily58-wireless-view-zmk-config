@@ -109,7 +109,7 @@
                                         &trans        &trans        &trans        &trans    &trans  &trans             &trans     &trans
             >;
 
-            sensor-bindings = <&BT_SELECT>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &BT_SELECT>;
         };
 
         raise_layer {
@@ -129,7 +129,7 @@
                                                    &trans           &trans           &trans           &trans    &trans  &trans           &trans           &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&RGB_EFFECT_SELECT &RGB_BRIGHT>;
         };
     };
 };
