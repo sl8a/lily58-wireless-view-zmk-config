@@ -51,7 +51,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "BT_SELECT";
             #sensor-binding-cells = <0>;
-            bindings = <&bt BT_NXT>, <&bt BT_PRV>;
+            bindings = <&bt BT_PRV>, <&bt BT_NXT>;
         };
 
         RGB_EFFECT_SELECT: RGB_EFFECT_SELECT {
