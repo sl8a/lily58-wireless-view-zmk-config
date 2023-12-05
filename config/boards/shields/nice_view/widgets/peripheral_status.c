@@ -23,6 +23,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/ble.h>
 
 LV_IMG_DECLARE(LaB);
+LV_IMG_DECLARE(LaBInv);
 LV_IMG_DECLARE(balloon);
 LV_IMG_DECLARE(mountain);
 
@@ -116,7 +117,7 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
 
     lv_obj_t *art = lv_img_create(widget->obj);
     bool random = sys_rand32_get() & 1;
-    lv_img_set_src(art, &LaB);
+    lv_img_set_src(art, &LaBInv);
     lv_obj_align(art, LV_ALIGN_TOP_LEFT, 0, 0);
 
     sys_slist_append(&widgets, &widget->node);
