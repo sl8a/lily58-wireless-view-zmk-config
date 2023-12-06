@@ -143,11 +143,11 @@ static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status
 
     // Draw circles
     int circle_offsets[5][2] = {
-        {13, 13}, {55, 13}, {34, 34} 
+        {13, 55}, {34, 34}, {55, 55}
 //        ,{13, 55}, {55, 55},
     };
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 3; i++) {
         bool selected = i == state->active_profile_index;
 
         lv_canvas_draw_arc(canvas, circle_offsets[i][0], circle_offsets[i][1], 13, 0, 359,
@@ -158,10 +158,10 @@ static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status
                                &arc_dsc_filled);
         }
 
- //       char label[2];
- //       snprintf(label, sizeof(label), "%d", i + 1);
- //       lv_canvas_draw_text(canvas, circle_offsets[i][0] - 8, circle_offsets[i][1] - 10, 16,
- //                           (selected ? &label_dsc_black : &label_dsc), label);
+        char label[2];
+        snprintf(label, sizeof(label), "%d", i + 1);
+        lv_canvas_draw_text(canvas, circle_offsets[i][0] - 8, circle_offsets[i][1] - 10, 16,
+                            (selected ? &label_dsc_black : &label_dsc), label);
     }
 
     // Rotate canvas
