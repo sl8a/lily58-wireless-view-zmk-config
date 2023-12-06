@@ -87,7 +87,7 @@ static void draw_top(lv_obj_t *widget, lv_color_t cbuf[], const struct status_st
     lv_canvas_draw_text(canvas, 0, 0, CANVAS_SIZE, &label_dsc, output_text);
 
     // Draw WPM
-    lv_canvas_draw_rect(canvas, 0, 21, 68, 42, &rect_white_dsc);
+//    lv_canvas_draw_rect(canvas, 0, 21, 68, 42, &rect_white_dsc);
     lv_canvas_draw_rect(canvas, 1, 22, 66, 40, &rect_black_dsc);
 
     char wpm_text[6] = {};
@@ -143,7 +143,8 @@ static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status
 
     // Draw circles
     int circle_offsets[5][2] = {
-        {13, 13}, {55, 13}, {34, 34}, {13, 55}, {55, 55},
+        {13, 13}, {55, 13}, {34, 34} 
+//        ,{13, 55}, {55, 55},
     };
 
     for (int i = 0; i < 5; i++) {
@@ -157,10 +158,10 @@ static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status
                                &arc_dsc_filled);
         }
 
-        char label[2];
-        snprintf(label, sizeof(label), "%d", i + 1);
-        lv_canvas_draw_text(canvas, circle_offsets[i][0] - 8, circle_offsets[i][1] - 10, 16,
-                            (selected ? &label_dsc_black : &label_dsc), label);
+ //       char label[2];
+ //       snprintf(label, sizeof(label), "%d", i + 1);
+ //       lv_canvas_draw_text(canvas, circle_offsets[i][0] - 8, circle_offsets[i][1] - 10, 16,
+ //                           (selected ? &label_dsc_black : &label_dsc), label);
     }
 
     // Rotate canvas
