@@ -142,7 +142,7 @@ static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status
     lv_canvas_draw_rect(canvas, 0, 0, CANVAS_SIZE, CANVAS_SIZE, &rect_black_dsc);
 
     // Draw circles
-    int circle_offsets[5][2] = {
+    int circle_offsets[3][2] = {
         {13, 55}, {34, 34}, {55, 55}
 //        ,{13, 55}, {55, 55},
     };
