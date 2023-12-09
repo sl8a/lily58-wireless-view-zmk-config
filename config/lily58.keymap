@@ -132,8 +132,8 @@
 &trans           &trans           &trans           &trans           &trans           &trans                                                                                   &trans           &trans           &trans     &trans    &trans     &trans
 &kp GRAVE        &kp N1           &kp N2           &kp UP_ARROW     &kp N4           &kp N5                                                                                   &kp N6           &kp N7           &kp N8     &kp N9    &kp N0     &trans
 &kp F1           &kp F2           &kp LEFT         &kp DOWN         &kp RIGHT        &kp F6                                                                                   &trans           &kp LEFT         &kp DOWN   &kp UP    &kp RIGHT  &trans
-&rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_TOG                      &rgb_ug RGB_COLOR_HSB(240,100,50)  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &kp EQUAL  &kp LBKT  &kp RBKT   &kp BSLH
-                                                   &trans           &trans           &trans           &rgb_ug RGB_COLOR_HSB(233,100,50)    &rgb_ug RGB_COLOR_HSB(240,100,50)  &trans           &trans           &trans
+&rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_TOG                      &rgb_ug RGB_COLOR_HSB(240,100,25)  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &kp EQUAL  &kp LBKT  &kp RBKT   &kp BSLH
+                                                   &trans           &trans           &trans           &rgb_ug RGB_COLOR_HSB(233,100,50)    &rgb_ug RGB_COLOR_HSB(240,100,25)  &trans           &trans           &trans
             >;
 
             sensor-bindings = <&RGB_EFFECT_SELECT &RGB_BRIGHT>;
