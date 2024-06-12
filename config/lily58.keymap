@@ -112,11 +112,11 @@
 
             label = "Lower";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                  &out OUT_TOG  &trans                &trans                 &trans  &trans  &trans
-&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                                        &none         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none   &none   &none
-&kp GRAVE   &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT                                     &none         &kp LEFT_BRACE        &kp RIGHT_BRACE        &none   &none   &none
-&trans      &trans        &trans        &trans        &trans        &bt BT_CLR_ALL  &out OUT_USB    &out OUT_BLE  &trans        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none   &none   &none
-                                        &trans        &trans        &trans          &trans          &trans        &trans        &trans                &trans
+&bt BT_CLR_ALL  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                &out OUT_TOG  &trans                &trans                 &trans  &trans  &trans
+&kp F1          &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                                      &none         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none   &none   &none
+&kp GRAVE       &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT                                   &none         &kp LEFT_BRACE        &kp RIGHT_BRACE        &none   &none   &none
+&trans          &trans        &trans        &trans        &trans        &trans        &out OUT_USB    &out OUT_BLE  &trans        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none   &none   &none
+                                            &trans        &trans        &trans        &trans          &trans        &trans        &trans                &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &BT_SELECT>;
